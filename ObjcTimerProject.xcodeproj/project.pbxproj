@@ -14,6 +14,7 @@
 		BA17472422B0962D00C8A747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA17472222B0962D00C8A747 /* LaunchScreen.storyboard */; };
 		BA17472722B0962D00C8A747 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA17472622B0962D00C8A747 /* main.m */; };
 		BA17476E22B1D61800C8A747 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA17476D22B1D61800C8A747 /* TimePickerViewController.m */; };
+		BA1747B622B71D0000C8A747 /* TimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1747B522B71D0000C8A747 /* TimeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		BA17472622B0962D00C8A747 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA17476C22B1D61800C8A747 /* TimePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		BA17476D22B1D61800C8A747 /* TimePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		BA1747B422B71D0000C8A747 /* TimeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeTableViewCell.h; sourceTree = "<group>"; };
+		BA1747B522B71D0000C8A747 /* TimeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				BA17471B22B0962C00C8A747 /* ViewController.m */,
 				BA17476C22B1D61800C8A747 /* TimePickerViewController.h */,
 				BA17476D22B1D61800C8A747 /* TimePickerViewController.m */,
+				BA1747B422B71D0000C8A747 /* TimeTableViewCell.h */,
+				BA1747B522B71D0000C8A747 /* TimeTableViewCell.m */,
 			);
 			path = ObjcTimerProject;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1747B622B71D0000C8A747 /* TimeTableViewCell.m in Sources */,
 				BA17471C22B0962C00C8A747 /* ViewController.m in Sources */,
 				BA17476E22B1D61800C8A747 /* TimePickerViewController.m in Sources */,
 				BA17472722B0962D00C8A747 /* main.m in Sources */,
