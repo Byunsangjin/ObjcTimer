@@ -7,25 +7,44 @@
 //
 
 #import "TimePickerViewController.h"
+#import "ViewController.h"
 
 @interface TimePickerViewController ()
 
 @end
 
 @implementation TimePickerViewController
+{
+    NSInteger sec;
+    NSInteger min;
+}
 
+// MARK:- Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
 }
 
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
+    [self setUI];
+}
+
+
+
+- (void) setUI {
     [self setLabelInPickerView];
+    
     UIColor *color = [[UIColor new] initWithRed: 0 green: 0 blue: 0 alpha: 0.6];
     [self.view setBackgroundColor: color];
+    
+    UITapGestureRecognizer *tap = [UITapGestureRecognizer new];
+    [tap addTarget: self action: @selector(dismissAlert)];
+    [self.view addGestureRecognizer: tap];
 }
 
 
@@ -51,6 +70,30 @@
 
 
 
+- (void) dismissAlert {
+    [self removeFromParentViewController];
+    [self.view removeFromSuperview];
+}
+
+
+
+// MARK:- Actions
+- (IBAction)okBtnClick:(id)sender {
+    ViewController *parentVC = (ViewController *)[self parentViewController];
+    [parentVC.timeLabel setText: [NSString stringWithFormat: @"%02ld : %02ld", min, sec]];
+    
+    [self dismissAlert];
+}
+
+
+
+- (IBAction)cancelBtnClick:(id)sender {
+    [self dismissAlert];
+}
+
+
+
+// MARK:- UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 4;
 }
@@ -66,6 +109,16 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [NSString stringWithFormat: @"%ld", row];
+}
+
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (component == 1) {
+        min = row;
+    } else {
+        sec = row;
+    }
 }
 
 @end

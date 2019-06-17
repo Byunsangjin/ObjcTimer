@@ -17,11 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-//    timePickerVC.childViewControllers
-    
-    
 }
 
 - (IBAction)startBtnClick:(id)sender {

@@ -11,6 +11,8 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *timeSetButton;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
