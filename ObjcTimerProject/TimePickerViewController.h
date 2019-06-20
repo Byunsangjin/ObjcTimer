@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) IBOutlet UIPickerView *timePickerView;
 
+@property NSInteger sec;
+@property NSInteger min;
+
 - (void) setLabelInPickerView;
 
 @end

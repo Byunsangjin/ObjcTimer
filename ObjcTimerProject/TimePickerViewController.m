@@ -14,16 +14,10 @@
 @end
 
 @implementation TimePickerViewController
-{
-    NSInteger sec;
-    NSInteger min;
-}
 
 // MARK:- Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 
@@ -80,7 +74,11 @@
 // MARK:- Actions
 - (IBAction)okBtnClick:(id)sender {
     ViewController *parentVC = (ViewController *)[self parentViewController];
-    [parentVC.timeLabel setText: [NSString stringWithFormat: @"%02ld : %02ld", min, sec]];
+    [parentVC.timeLabel setText: [NSString stringWithFormat: @"%02ld : %02ld", self.min, self.sec]]; // 라벨에 세팅
+    
+    // 프로퍼티에 세팅
+    parentVC.min = self.min;
+    parentVC.sec = self.sec;
     
     [self dismissAlert];
 }
@@ -115,10 +113,9 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 1) {
-        min = row;
+        self.min = row;
     } else {
-        sec = row;
+        self.sec = row;
     }
 }
-
 @end

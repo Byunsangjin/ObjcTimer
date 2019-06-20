@@ -10,7 +10,11 @@
 #import "TimePickerViewController.h"
 
 @interface ViewController ()
+
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *timeTopConstraint;
+
+@property NSArray *timeArray;
+
 
 @end
 
@@ -18,62 +22,75 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setTimeProperty];
 }
 
 
 
 -(void)startTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self.timeLabel setText: [self timeSubOne: self.timeLabel.text]];
+        [self secMinusOne];
+        
+        NSString *curTime = [NSString stringWithFormat:@"%02ld : %02ld", self.min, self.sec];
+        [self.timeLabel setText: curTime];
     }];
-    
-    
 }
 
 
 
--(NSString *)timeSubOne: (NSString *)time {
-    NSArray *timeArray = [time componentsSeparatedByString: @" : "];
-    NSInteger minute = [timeArray[0] integerValue];
-    NSInteger sec = [timeArray[1] integerValue];
+-(void)secMinusOne {
+    [self setTimeProperty];
     
-    if (minute == sec && minute == 0) {
+    if (self.min == self.sec && self.min == 0) {
         NSLog(@"끝!!!!");
-    } else if (sec == 0) {
-        minute -= 1;
-        sec = 59;
+    } else if (self.sec == 0) {
+        self.min -= 1;
+        self.sec = 59;
     } else {
-        sec -= 1;
+        self.sec -= 1;
     }
     
-    return [NSString stringWithFormat:@"%02ld : %02ld", minute, sec];
+//    return [NSString stringWithFormat:@"%02ld : %02ld", self.min, self.sec];
+}
+
+
+
+-(void)setTimeProperty {
+    self.timeArray = [self.timeLabel.text componentsSeparatedByString: @" : "];
+    self.min = [self.timeArray[0] integerValue];
+    self.sec = [self.timeArray[1] integerValue];
 }
 
 
 
 // MARK:- Actions
-- (IBAction)timeSetBtnClick:(id)sender {
+- (IBAction)setTimeClick:(id)sender {
     TimePickerViewController *timePickerVC = (TimePickerViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"TimePickerViewController"];
     
     [self addChildViewController: timePickerVC];
     [self.view addSubview: timePickerVC.view];
+    
+    [timePickerVC.timePickerView selectRow:self.min inComponent:1 animated:true]; // 분
+    [timePickerVC.timePickerView selectRow:self.sec inComponent:2 animated:true]; // 초
+    
+    timePickerVC.min = self.min;
+    timePickerVC.sec = self.sec;
 }
 
 
 
 - (IBAction)startBtnClick:(id)sender {
-    if ([self.timeLabel.text isEqualToString: @"00 : 00"]) {
+    if ([self.timeLabel.text isEqualToString:@"00 : 00"]) {
         return;
     }
     
-    if ([self.startButton tag] == 0) { // start 일때
+    if ([self.startButton.titleLabel.text isEqualToString: @"start"]) { // start 일때
         [self startTimer];
         [self.startButton setTitle:@"record" forState:UIControlStateNormal];
         [self.timeSetButton setEnabled:NO];
-        
-        self.startButton.tag = 1;
     } else { // record 일때
-        self.startButton.tag = 0;
+        
     }
 }
 
@@ -83,8 +100,6 @@
     [self.timer invalidate];
     [self.startButton setTitle:@"start" forState:UIControlStateNormal];
     [self.timeSetButton setEnabled:YES];
-    
-//    self.startButton.tag = 0;
 }
 
 

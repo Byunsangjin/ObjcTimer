@@ -14,7 +14,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *timeSetButton;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+
 @property NSTimer *timer;
+@property NSInteger min;
+@property NSInteger sec;
 
 @end
 
