@@ -20,15 +20,18 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDZ-eh-iq8">
                                 <rect key="frame" x="0.0" y="44" width="375" height="84"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.79607843140000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBp-b4-8dz">
-                                <rect key="frame" x="150.66666666666666" y="332" width="74" height="36"/>
+                                <rect key="frame" x="0.0" y="332" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.79607843140000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="시간 설정"/>
+                                <state key="normal" title="시간 설정">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="setTimeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cf-Tk-Dwk"/>
                                 </connections>
@@ -43,15 +46,21 @@
                                 <rect key="frame" x="0.0" y="398" width="375" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVc-tc-DYT">
-                                        <rect key="frame" x="96.666666666666671" y="35" width="32.000000000000014" height="30"/>
-                                        <state key="normal" title="start"/>
+                                        <rect key="frame" x="88" y="33.666666666666686" width="49" height="33"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="21"/>
+                                        <state key="normal" title="start">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="startBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBy-oR-ceZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdS-kI-keh">
-                                        <rect key="frame" x="247" y="35" width="31" height="30"/>
-                                        <state key="normal" title="stop"/>
+                                        <rect key="frame" x="239" y="33.666666666666686" width="47" height="33"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="21"/>
+                                        <state key="normal" title="stop">
+                                            <color key="titleColor" red="1" green="0.1670723593" blue="0.1170511085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stopBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZO-Dp-2lq"/>
                                         </connections>
@@ -69,9 +78,27 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eaT-Pt-nTh">
                                 <rect key="frame" x="0.0" y="518" width="375" height="260"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="8f1-aK-hld">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEZ-Tu-RFL">
+                                            <rect key="frame" x="169.66666666666666" y="7" width="36" height="30"/>
+                                            <state key="normal" title="Clear"/>
+                                            <connections>
+                                                <action selector="clearBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Id9-7t-bjh"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="VEZ-Tu-RFL" firstAttribute="centerY" secondItem="8f1-aK-hld" secondAttribute="centerY" id="HHB-bx-GvB"/>
+                                        <constraint firstItem="VEZ-Tu-RFL" firstAttribute="centerX" secondItem="8f1-aK-hld" secondAttribute="centerX" id="yyu-xn-bSU"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" id="K8m-7R-XHD" customClass="TimeTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" id="K8m-7R-XHD" customClass="TimeTableViewCell">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K8m-7R-XHD" id="YM2-Qe-3Tn">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -90,10 +117,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="timeRecord" destination="aiu-X5-fRd" id="Bu0-4P-hnA"/>
+                                            <outlet property="timeRecordLabel" destination="aiu-X5-fRd" id="AGi-Ba-GFX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JtS-1f-HcC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wUO-vs-yYW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,6 +135,7 @@
                             <constraint firstItem="KDZ-eh-iq8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5mg-54-RCs"/>
                             <constraint firstItem="gBp-b4-8dz" firstAttribute="centerX" secondItem="t6a-Q7-Ljx" secondAttribute="centerX" id="G0n-La-gaG"/>
                             <constraint firstItem="tvf-wQ-prX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JVA-rT-Xzj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gBp-b4-8dz" secondAttribute="trailing" id="Nye-4i-to9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KDZ-eh-iq8" secondAttribute="trailing" id="Ss6-JG-Ufl"/>
                             <constraint firstItem="KDZ-eh-iq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YzD-fb-48Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eaT-Pt-nTh" secondAttribute="trailing" id="dZi-9m-rKi"/>
@@ -111,14 +143,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eaT-Pt-nTh" secondAttribute="bottom" id="ggs-6W-fUX"/>
                             <constraint firstItem="eaT-Pt-nTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gnE-Xu-zMZ"/>
                             <constraint firstItem="tvf-wQ-prX" firstAttribute="top" secondItem="gBp-b4-8dz" secondAttribute="bottom" constant="30" id="gu5-R6-7lu"/>
+                            <constraint firstItem="gBp-b4-8dz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hTj-hL-raz"/>
                             <constraint firstItem="t6a-Q7-Ljx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-p1-2ZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="VEZ-Tu-RFL" id="ptO-PK-dvD"/>
                         <outlet property="startButton" destination="UVc-tc-DYT" id="oBJ-hx-HTb"/>
+                        <outlet property="stopButton" destination="PdS-kI-keh" id="pN1-gb-PQ2"/>
                         <outlet property="timeLabel" destination="t6a-Q7-Ljx" id="UMI-C5-Btl"/>
                         <outlet property="timeSetButton" destination="gBp-b4-8dz" id="0dF-a0-mSe"/>
+                        <outlet property="timeTableView" destination="eaT-Pt-nTh" id="Y1Q-vF-KqS"/>
                         <outlet property="timeTopConstraint" destination="3nF-1Q-NYa" id="T3o-Au-Kgh"/>
                     </connections>
                 </viewController>
@@ -138,23 +174,27 @@
                                 <rect key="frame" x="0.0" y="578" width="375" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2f-o1-Rge">
-                                        <rect key="frame" x="15" y="10" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.46228451471922849" blue="0.6277509749552892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="취소"/>
+                                        <rect key="frame" x="15" y="10" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelBtnClick:" destination="5bD-GD-qZl" eventType="touchUpInside" id="9qa-ur-5ra"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0W-7C-vht">
-                                        <rect key="frame" x="330" y="10" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.46228451471922849" blue="0.6277509749552892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="확인"/>
+                                        <rect key="frame" x="330" y="10" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="okBtnClick:" destination="5bD-GD-qZl" eventType="touchUpInside" id="wfx-lP-tur"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-dm-44e">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="53" width="375" height="147"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="5bD-GD-qZl" id="2uD-ua-CGB"/>
@@ -167,13 +207,14 @@
                                     <constraint firstAttribute="bottom" secondItem="PjG-dm-44e" secondAttribute="bottom" id="5Y6-mp-4hI"/>
                                     <constraint firstItem="PjG-dm-44e" firstAttribute="top" secondItem="N2f-o1-Rge" secondAttribute="bottom" constant="10" id="GTd-fS-CCm"/>
                                     <constraint firstAttribute="height" constant="200" id="JXH-Xx-X8F"/>
-                                    <constraint firstItem="N2f-o1-Rge" firstAttribute="leading" secondItem="lKk-KE-hCx" secondAttribute="leading" constant="15" id="Q5D-4t-rdW"/>
-                                    <constraint firstAttribute="trailing" secondItem="f0W-7C-vht" secondAttribute="trailing" constant="15" id="XR4-ra-mFi"/>
+                                    <constraint firstItem="f0W-7C-vht" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N2f-o1-Rge" secondAttribute="trailing" constant="285" id="K65-Gk-Atn"/>
                                     <constraint firstItem="PjG-dm-44e" firstAttribute="leading" secondItem="lKk-KE-hCx" secondAttribute="leading" id="fdx-p8-50I"/>
                                     <constraint firstAttribute="trailing" secondItem="PjG-dm-44e" secondAttribute="trailing" id="i1m-cu-giR"/>
                                     <constraint firstItem="N2f-o1-Rge" firstAttribute="top" secondItem="lKk-KE-hCx" secondAttribute="top" constant="10" id="kbL-JT-jXC"/>
+                                    <constraint firstItem="f0W-7C-vht" firstAttribute="centerY" secondItem="N2f-o1-Rge" secondAttribute="centerY" id="lTa-xh-AWR"/>
                                     <constraint firstItem="f0W-7C-vht" firstAttribute="top" secondItem="lKk-KE-hCx" secondAttribute="top" constant="10" id="mkD-dC-liP"/>
-                                    <constraint firstItem="f0W-7C-vht" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N2f-o1-Rge" secondAttribute="trailing" constant="8" symbolic="YES" id="mlO-zp-niB"/>
+                                    <constraint firstAttribute="trailing" secondItem="f0W-7C-vht" secondAttribute="trailing" constant="15" id="q6G-Ep-RfC"/>
+                                    <constraint firstItem="N2f-o1-Rge" firstAttribute="leading" secondItem="lKk-KE-hCx" secondAttribute="leading" constant="15" id="tJg-AT-sc7"/>
                                 </constraints>
                             </view>
                         </subviews>

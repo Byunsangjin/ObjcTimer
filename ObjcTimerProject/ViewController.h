@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIButton *timeSetButton;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+@property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property NSTimer *timer;
