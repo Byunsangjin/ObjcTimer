@@ -70,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="518" width="375" height="260"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" id="K8m-7R-XHD" customClass="TimeTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" id="K8m-7R-XHD" customClass="TimeTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K8m-7R-XHD" id="YM2-Qe-3Tn">
@@ -117,6 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="startButton" destination="UVc-tc-DYT" id="oBJ-hx-HTb"/>
+                        <outlet property="stopButton" destination="PdS-kI-keh" id="EsI-XI-ozn"/>
                         <outlet property="timeLabel" destination="t6a-Q7-Ljx" id="UMI-C5-Btl"/>
                         <outlet property="timeSetButton" destination="gBp-b4-8dz" id="0dF-a0-mSe"/>
                         <outlet property="timeTopConstraint" destination="3nF-1Q-NYa" id="T3o-Au-Kgh"/>

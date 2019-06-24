@@ -97,9 +97,17 @@
 
 
 - (IBAction)stopBtnClick:(id)sender {
-    [self.timer invalidate];
-    [self.startButton setTitle:@"start" forState:UIControlStateNormal];
-    [self.timeSetButton setEnabled:YES];
+    if ([self.timer isValid]) { // 타이머가 작동중이면
+        [self.timer invalidate];
+        [self.startButton setTitle:@"start" forState:UIControlStateNormal];
+        [self.stopButton setTitle:@"reset" forState:UIControlStateNormal];
+        [self.timeSetButton setEnabled:YES];
+    }
+    
+    if ([self.stopButton.titleLabel.text isEqualToString:@"reset"]) {
+        // 클릭 했을 때 전부 초기화        
+        [self.stopButton setTitle:@"stop" forState:UIControlStateNormal];
+    }
 }
 
 
