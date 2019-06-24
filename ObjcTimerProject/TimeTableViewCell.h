@@ -11,8 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TimeTableViewCell : UITableViewCell
-
-@property (strong, nonatomic) IBOutlet UILabel *timeRecord;
+@property (strong, nonatomic) IBOutlet UILabel *timeRecordLabel;
 
 @end
 
